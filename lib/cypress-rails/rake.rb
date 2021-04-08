@@ -12,7 +12,18 @@ task :"cypress:open" do
   system "#{CLI} open"
 end
 
+desc "Open interactive Cypress app for developing tests"
+task :"cypress:open-ct" do
+  trap("SIGINT") {} # avoid traceback
+  system "#{CLI} open"
+end
+
 desc "Run Cypress tests headlessly"
 task :"cypress:run" do
+  abort unless system "#{CLI} run"
+end
+
+desc "Run Cypress tests headlessly"
+task :"cypress:run-ct" do
   abort unless system "#{CLI} run"
 end
