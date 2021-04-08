@@ -3,6 +3,8 @@
 ENV["RAILS_ENV"] ||= "test"
 require "pathname"
 require "cypress-rails"
+require "cypress-rails/open_ct"
+require "cypress-rails/run_ct"
 require Pathname.new(CypressRails::Config.new.dir).join("config/environment")
 
 command = ARGV[0]
