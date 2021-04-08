@@ -14,4 +14,10 @@ when "open"
 when "run"
   passed = CypressRails::Run.new.call
   exit 1 unless passed
+
+when "open-ct"
+  CypressRails::OpenCt.new.call
+when "run-ct"
+  passed = CypressRails::RunCt.new.call
+  exit 1 unless passed
 end
